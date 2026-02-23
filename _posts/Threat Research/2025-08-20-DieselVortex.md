@@ -124,7 +124,7 @@ Corporate registry records show the identity linked to the email `y.ivlev@gmail.
 From `2014` to `2025`, **Yuri** was a founder or co-founder of the 5 registered entities:
 
 
-| **Registration Date**| **LLC Name**  | **Translation** | **ИНН/Tax ID** | **Email**                | **Sector**   | **Ownership at creation** |
+| **Registration Date**| **LLC Name**  | **Translation** | **ИНН/Tax ID** | **Email**                | **Sector**   | **Ownership at incorporation** |
 |------------------------|---------------|----------------|------------|----------------------|---------------------|-----------|
 | 25th Sep 2014 (closed) | КОРОНА ХОСТЕЛ | KORONA HOSTEL  | [7715446004](https://www.tbank.ru/business/contractor/legal/5147746142638/) | N/A                  | Hotel/Accommodation  | 100%      |
 | 30 Sept 2021          | ЮНИКС ГРУПП   | UNIX GROUP LLC | [7713484999](https://www.tbank.ru/business/contractor/legal/1217700463529/) | buh[@]unx-defence[.]ru   | Wholesale trade     | 100%      |
@@ -248,7 +248,7 @@ Industry media coverage from Russian logistics publications references Kazarinov
 See below for the full list of registered entities with corresponding email addresses. 
 
 
-| **Registration Date**  | **LLC Name**    | **Translation** | **ИНН/Tax ID** | **Email**                | **Sector**           | **Ownership at creation** |
+| **Registration Date**  | **LLC Name**    | **Translation** | **ИНН/Tax ID** | **Email**                | **Sector**           | **Ownership at incorporation** |
 |------------------------|-----------------|-----------------|----------------|--------------------------|----------------------|---------------|
 | 22nd May 2014 (closed) | ФИЛИКА ГРУПП    | FILIKA GROUP    | [7715432611](https://www.tbank.ru/business/contractor/legal/1147746571499/)     | N/A                      | Cargo transportation | 33%           |
 | 22nd Sept 2016          | ТЕРМИНАЛ ПЛЮС   | Terminal Plus   | [7728349199](https://www.tbank.ru/business/contractor/legal/1167746892488/)     | kiseleva_n1971[@]mail.ru   | Transportation       | 100%          |
