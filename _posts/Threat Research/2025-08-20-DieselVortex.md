@@ -21,7 +21,7 @@ Recovered source code and database dumps provided rare visibility into both infr
 
 Linguistic analysis of those logs indicates Armenian-speaking actors targeting companies in the logistics sector. Conversations reference impersonation of freight brokers, use of voice phishing, and deployment of remote management tools to access internal systems. The objective was consistent with cargo diversion and goods theft.
 
-During infrastructure analysis, a single domain registration linked the phishing panel to a Russian-registered email address. That same email appears linked to corporate records of potentially linked logistics and warehousing LLCs that reported over **14.3 billion rubles** (**$180+ million USD**) in annual revenue within 2024.
+During infrastructure analysis, a single domain registration linked the phishing panel to a Russian-registered email address. That same email appears linked to corporate records of potentially linked logistics and warehousing LLCs that reported over **14.3 billion rubles** (**$180+ million USD**) in annual revenue in 2024.
 
 [![1](/assets/images/cargo/20.png){: .align-center .img-border}](/assets/images/cargo/20.png)
 <p class="figure-caption">Figure X — Correlation Graph</p>
