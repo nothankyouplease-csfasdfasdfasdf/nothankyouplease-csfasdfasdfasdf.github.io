@@ -101,7 +101,7 @@ Unlike anonymized registrations commonly used in phishing operations, this domai
 
 The registrant email address exposed in the RDAP record was reused across multiple services and corporate filings. We used the platform [osint.industries](https://www.osint.industries/) to pivot on the email and phone number to find profiles under the names:
 
-[![3](/assets/images/cargo/21.jpg){: .align-center .img-border}](/assets/images/cargo/21.jpg)
+[![3](/assets/images/cargo/21.png){: .align-center .img-border}](/assets/images/cargo/21.png)
 <p class="figure-caption">Screenshot from osint.industries platform</p>
 
 * Yura Ivlev
