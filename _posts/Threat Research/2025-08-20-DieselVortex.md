@@ -17,11 +17,11 @@ toc: true
 
 In February 2026, *Ctrl-Alt-Intel* and *Have I Been Squatted* identified a financially motivated threat actor we've tracked as **Diesel Vortex**. The group operate a phishing-as-a-service platform branded *Global Profit* or *MC Profit Always* and harvested more than 1,500 unique credentials belonging to Western logistics, trucking, and transportation companies.
 
-Recovered source code and database dumps provided rare visibility into both infrastructure and operations. Telegram webhook logs embedded within the platform exposed months of internal coordination between operators. 
+*Have I Been Squatted* retrieved and analysed source code from the *Global Profit* phishing platform, which provided visibility into both infrastructure and operations. Telegram webhook logs embedded within the platform exposed months of internal coordination between operators. 
 
 Linguistic analysis of those logs indicates Armenian-speaking actors targeting companies in the logistics sector. Conversations reference impersonation of freight brokers, use of voice phishing, and deployment of remote management tools to access internal systems. The objective was consistent with cargo diversion and goods theft.
 
-During infrastructure analysis, a single domain registration linked the phishing panel to a Russian-registered email address. That same email appears linked to corporate records of potentially linked logistics and warehousing LLCs that reported over **14.3 billion rubles** (**$180+ million USD**) in annual revenue within 2024.
+During infrastructure analysis, *Ctrl-Alt-Intel* identified a domain registration that linked the phishing panel to a Russian-registered email address. That same email appears linked to corporate records of potentially linked logistics and warehousing LLCs that reported over **14.3 billion rubles** (**$180+ million USD**) in annual revenue within 2024.
 
 [![1](/assets/images/cargo/20.png){: .align-center .img-border}](/assets/images/cargo/20.png)
 <p class="figure-caption">Main Correaltio Graph</p>
