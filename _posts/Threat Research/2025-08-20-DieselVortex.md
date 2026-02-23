@@ -15,7 +15,7 @@ toc: true
 
 # Overview
 
-In February 2026, *Ctrl-Alt-Intel* and *Have I Been Squatted* uncovered a financially motivated threat actor we've tracked as **Diesel Vortex**. The group operate a phishing-as-a-service platform branded *Global Profit* or *MC Profit Always* and harvested more than 1,500 unique credentials belonging to Western logisitics, trucking and transportation companies
+In February 2026, *Ctrl-Alt-Intel* and *Have I Been Squatted* identified a financially motivated threat actor we've tracked as **Diesel Vortex**. The group operate a phishing-as-a-service platform branded *Global Profit* or *MC Profit Always* and harvested more than 1,500 unique credentials belonging to Western logistics, trucking, and transportation companies.
 
 Recovered source code and database dumps provided rare visibility into both infrastructure and operations. Telegram webhook logs embedded within the platform exposed months of internal coordination between operators. 
 
@@ -24,7 +24,7 @@ Linguistic analysis of those logs indicates Armenian-speaking actors targeting c
 During infrastructure analysis, a single domain registration linked the phishing panel to a Russian-registered email address. That same email appears linked to corporate records of potentially linked logistics and warehousing LLCs that reported over **14.3 billion rubles** (**$180+ million USD**) in annual revenue within 2024.
 
 [![1](/assets/images/cargo/20.png){: .align-center .img-border}](/assets/images/cargo/20.png)
-<p class="figure-caption">Figure X — Correlation Graph</p>
+<p class="figure-caption">Main Correaltio Graph</p>
 
 > This research is based solely on open-source intelligence (OSINT) and analysis of materials obtained during technical investigation. References to individuals and Russian-registered limited liability companies (LLCs) are provided for research context only, based on publicly available records and observed technical artifacts. Any linkages described are hypotheses derived from correlational indicators and should not be interpreted as findings of guilt, intent, or legal liability.
 
@@ -45,11 +45,11 @@ Four Telegram chats were captured:
 The dominant chat, containing 1,255 messages, was conducted in Armenian using Latin script, with occasional Russian messages. Operators discussed:
 
 * Credential harvesting results
-* MCs - Motor Carrier (companies that transports goods/cargo)
+* MCs - Motor Carrier (companies that transport goods/cargo)
 * SMS / Call spoofing services
 * Remote, Monitoring & Management (RMM) tools
 
-Although 14 unique Telegram user IDs registered to the platform, the majority of the mesages were sent by 4 users:
+Although 14 unique Telegram user IDs registered to the platform, the majority of the messages were sent by 4 users:
 
 
 | **User ID** | **username** | **# of messages** |
@@ -68,26 +68,28 @@ Although 14 unique Telegram user IDs registered to the platform, the majority of
 
 ## Translated conversations using an LLM 
 
-Most messages were Armenian in Latin script. We have attempted, where possible to translate messages to understand the context behind the campaign. Seeing how the speak to each other, on the day to day, in their private Telegram chat provides a lot of insight. For some reason, some accounts only had their Telegram ID and not username. I've named these `TA1` and `TA2`. The other usernames were found within the logs.
+Most messages were written in Armenian using Latin script. Where possible, we translated them to better understand campaign context. Seeing how the speak to each other, on the day to day, in their private Telegram chat provides a lot of insight. For some reason, some accounts only had their Telegram ID and not username. I've named these `TA1` and `TA2`. The other usernames were found within the logs.
 
 [![1](/assets/images/cargo/17.png){: .align-center .img-border}](/assets/images/cargo/17.png)
-<p class="figure-caption">Figure X — Translated Chat Exerpt #1</p>
+<p class="figure-caption">Translated Chat Excerpt</p>
 
-2 members were discussing "250k cargo" and one asked "do we have an MC with 250k cargo?". Here they are refereing to a compromised Motor Carrier with 250k worth of cargo. Although the currency is not stated - we presume they are discussing USD as they are targeting US companies. 
+2 members of **Diesel Vortex** on the *Global Profit Platform* had a conversation with one asking "do we have an MC with 250k cargo?". Here they are referring to a compromised Motor Carrier with 250k worth of cargo. Although the currency is not stated - we presume they are discussing USD as they are targeting US companies. 
+
+Please see [Have I Been Squatted's analysis](https://haveibeensquatted.com/blog/diesel-vortex-inside-the-russian-cybercrime-group-targeting-us-eu-freight#language-geography-and-operational-patterns) for further details.
 
 # The Infrastructure Pivot
 
 Within the phishing panel source code, the file `njhTghagTGgYT\template\footer.php` contained a reference to the domain `yasomawork[.]space`. The domain was embedded within the login panel of the phishing-kit.
 
 [![1](/assets/images/cargo/1.png){: .align-center .img-border}](/assets/images/cargo/1.png)
-<p class="figure-caption">Figure X — Source Code Exerpt</p>
+<p class="figure-caption"> Source Code Excerpt</p>
 
 Historical DNS records show `yasomawork[.]space` resolving to `45.130.41[.]81` on 14 February 2025. The domain itself was registered three days earlier, on 11 February 2025 at 16:51:57 GMT.
 
 RDAP data shows the domain was registered through the Russian provider *BEGET-RU*. The associated IP address was also hosted on infrastructure allocated to Beget.
 
 [![2](/assets/images/cargo/2.png){: .align-center .img-border}](/assets/images/cargo/2.png)
-<p class="figure-caption">Figure X — <a href="https://client.rdap.org/?type=domain&object=yasomawork.space&follow-referral=1">RDAP Record</a></p>
+<p class="figure-caption"><a href="https://client.rdap.org/?type=domain&object=yasomawork.space&follow-referral=1">RDAP Record</a></p>
 
 Unlike anonymized registrations commonly used in phishing operations, this domain contained registrant details including:
 
@@ -97,7 +99,10 @@ Unlike anonymized registrations commonly used in phishing operations, this domai
 
 # From Infra to Identity
 
-The registrant email address exposed in the RDAP record was reused across multiple services and corporate filings. Open-source intelligence links the email and phone number to profiles under the names:
+The registrant email address exposed in the RDAP record was reused across multiple services and corporate filings. We used the platform [osint.industries](https://www.osint.industries/) to pivot on the email and phone number to find profiles under the names:
+
+[![3](/assets/images/cargo/21.jpg){: .align-center .img-border}](/assets/images/cargo/21.jpg)
+<p class="figure-caption">Screenshot from osint.industries platform</p>
 
 * Yura Ivlev
 * Yuri Ivlev 
@@ -109,10 +114,10 @@ We will use the name **Yuri** or **Yuri Ivlev** for the remainder of this analys
 Publicly accessible social media accounts contain photos dating from 2014 through 2023. The same email address was used to register the domain `unx-defence[.]ru` on 8 December 2021, also via *Beget*.
 
 [![3](/assets/images/cargo/3.jpg){: .align-center .img-border}](/assets/images/cargo/3.jpg)
-<p class="figure-caption">Figure X — Yuri's Facebook Photo (2014)</p>
+<p class="figure-caption">Yuri's Facebook Photo (2014)</p>
 
 [![4](/assets/images/cargo/4.jpg){: .align-center .img-border}](/assets/images/cargo/4.jpg)
-<p class="figure-caption">Figure X — Yuri's Whatsapp Photo (2023)</p>
+<p class="figure-caption">Yuri's Whatsapp Photo (2023)</p>
 
 Corporate registry records show the identity linked to the email `y.ivlev@gmail.com` associated with several Russian LLCs operating in wholesale trade, transportation and warehousing.
 
@@ -121,7 +126,7 @@ From `2014` to `2025`, **Yuri** was a founder or co-founder of the 5 registered 
 
 | **Registration Date**| **LLC Name**  | **Translation** | **ИНН/Tax ID** | **Email**                | **Sector**   | **Ownership at creation** |
 |------------------------|---------------|----------------|------------|----------------------|---------------------|-----------|
-| 25th Sep 2014 (closed) | КОРОНА ХОСТЕЛ | KORONA HOSTEL  | [7715446004](https://www.tbank.ru/business/contractor/legal/5147746142638/) | N/A                  | Hotel/Accomodation  | 100%      |
+| 25th Sep 2014 (closed) | КОРОНА ХОСТЕЛ | KORONA HOSTEL  | [7715446004](https://www.tbank.ru/business/contractor/legal/5147746142638/) | N/A                  | Hotel/Accommodation  | 100%      |
 | 30 Sept 2021          | ЮНИКС ГРУПП   | UNIX GROUP LLC | [7713484999](https://www.tbank.ru/business/contractor/legal/1217700463529/) | buh[@]unx-defence[.]ru   | Wholesale trade     | 100%      |
 | 15th Jun 2023          | ВПМ           | VPM            | [9726047206](https://www.tbank.ru/business/contractor/legal/1237700412443/) | y.ivlev[@]gmail[.]com    | Wholesale trade     | 100%      |
 | 13th July 2023         | ТЕРМИНАЛ ИКС  | Terminal X     | [9726049122](https://www.tbank.ru/business/contractor/legal/1237700473581/) | nkazarinov[@]yandex[.]ru | Warehousing/Storage | 67%       |
@@ -144,27 +149,27 @@ However, additional classifications include:
 These codes directly align with logistics, freight handling, and storage operations.
 
 [![6](/assets/images/cargo/9.png){: .align-center .img-border}](/assets/images/cargo/9.png)
-<p class="figure-caption">Figure X — <a href="https://www.tbank.ru/business/contractor/legal/1217700463529/okved/">UNIX Group LLC OKVED code</a></p>
+<p class="figure-caption"><a href="https://www.tbank.ru/business/contractor/legal/1217700463529/okved/">UNIX Group LLC OKVED code</a></p>
 
 The domain `unx-group[.]ru` is the publicly accessible website for the entity *UNIX GROUP LLC*:
 
 [![7](/assets/images/cargo/4.png){: .align-center .img-border}](/assets/images/cargo/4.png)
-<p class="figure-caption">Figure X — <a href="https://unx-group.ru/">UNIX Group website</a></p>
+<p class="figure-caption"><a href="https://unx-group.ru/">UNIX Group website</a></p>
 
 "UNIX Group, a trading and manufacturing company, is a direct partner of leading Chinese factories and offers a wide range of high-quality industrial and consumer raw materials". We can see they also have "Our own logistics service for international transportation" and are in "Close cooperation with leading factories in Russia and China".
 
 [![8](/assets/images/cargo/5.png){: .align-center .img-border}](/assets/images/cargo/5.png)
-<p class="figure-caption">Figure X — <a href="https://unx-group.ru/">UNIX Group website</a></p>
+<p class="figure-caption"><a href="https://unx-group.ru/">UNIX Group website</a></p>
 
 This appears to be a legitimate registered business that comes along with a product catalog:
 
 [![9](/assets/images/cargo/6.png){: .align-center .img-border}](/assets/images/cargo/6.png)
-<p class="figure-caption">Figure X — <a href="https://unx-group.ru/">UNIX Group website</a></p>
+<p class="figure-caption"><a href="https://unx-group.ru/">UNIX Group website</a></p>
 
 On 23 March 2022, *UNIX GROUP LLC* was issued an [official trade certificate](https://swis.trade.kg/Doc/171c9c78-4b33-47d9-af94-74dbcec88700) through a Kyrgyz government export and import documentation system. The certificate is publicly accessible and registers the company in connection with cross-border trade activity. Notably, the certificate lists the name **Olga Olegovna Ivleva**, who previously appeared in ownership records associated with the company.
 
 [![10](/assets/images/cargo/7.png){: .align-center .img-border}](/assets/images/cargo/7.png)
-<p class="figure-caption">Figure X — <a href="https://swis.trade.kg/Doc/171c9c78-4b33-47d9-af94-74dbcec88700">Kyrgyz trade certificate</a></p>
+<p class="figure-caption"><a href="https://swis.trade.kg/Doc/171c9c78-4b33-47d9-af94-74dbcec88700">Kyrgyz trade certificate</a></p>
 
 ### Rapid Growth
 
@@ -184,7 +189,7 @@ Between 2021 and 2024, *UNIX Group LLC* scaled from sub-million revenue to more 
 We have no evidence to prove these funds have originated from cargo theft, nor is *Ctrl-Alt-Intel* suggesting this. At minimum, the overlap establishes that the registrant of phishing infrastructure operates or has operated companies in the same sector targeted by **Diesel Vortex**.
 
 [![11](/assets/images/cargo/14.png){: .align-center .img-border}](/assets/images/cargo/14.png)
-<p class="figure-caption">Figure X — Correlation Graph #1</p>
+<p class="figure-caption">Correlation Graph #1</p>
 
 ## Terminal X and Shared Ownership
 
@@ -196,7 +201,7 @@ Ownership at formation:
 * **Nikita Kazarinov** - 33%
 
 [![12](/assets/images/cargo/8.png){: .align-center .img-border}](/assets/images/cargo/8.png)
-<p class="figure-caption">Figure X — Split ownership of Terminal X</p>
+<p class="figure-caption">Split ownership of Terminal X</p>
 
 The company lists the following OKVED classifications:
 
@@ -225,20 +230,20 @@ Nikita Kazarinov previously founded or owned several logistics-related entities,
 Both *Terminal Plus* and *Terminal Broker* are associated with the domain `shuttle-logistic[.]ru`, operating under the brand "Shuttle Logistics Solutions":
 
 [![14](/assets/images/cargo/10.png){: .align-center .img-border}](/assets/images/cargo/10.png)
-<p class="figure-caption">Figure X — <a href="https://shuttle-logistic.ru/company_details/">Shuttle Logistics website</a></p>
+<p class="figure-caption"><a href="https://shuttle-logistic.ru/company_details/">Shuttle Logistics website</a></p>
 
 Unlike *UNIX Group LLC*, the Shuttle Logistics website prominently displays staff identities and executive leadership. **Nikita Kazarinov** is publicly presented as CEO.
 
 [![15](/assets/images/cargo/11.png){: .align-center .img-border}](/assets/images/cargo/11.png)
-<p class="figure-caption">Figure X — <a href="https://shuttle-logistic.ru/company_details/">Nikita Kazarinov</a></p>
+<p class="figure-caption"><a href="https://shuttle-logistic.ru/company_details/">Nikita Kazarinov</a></p>
 
 Industry media coverage from Russian logistics publications references Kazarinov in connection with freight and transportation operations.
 
 [![15](/assets/images/cargo/12.png){: .align-center .img-border}](/assets/images/cargo/12.png)
-<p class="figure-caption">Figure X — <a href="https://logirus.ru/news/transport/fury_asstra_popali_v_perestrelku_na_ukraino-rossiyskoy_granitse.html?sphrase_id=11323822">Snippet of logirus.ru article</a></p>
+<p class="figure-caption"><a href="https://logirus.ru/news/transport/fury_asstra_popali_v_perestrelku_na_ukraino-rossiyskoy_granitse.html?sphrase_id=11323822">Snippet of logirus.ru article</a></p>
 
 [![15](/assets/images/cargo/13.png){: .align-center .img-border}](/assets/images/cargo/13.png)
-<p class="figure-caption">Figure X — <a href="https://logirus.ru/articles/week_results/indiyskiy_kryuk-_parallelnyy_import_i_konteynery_-na_stope.html?sphrase_id=11323822">Screenshot from logirus.ru website</a></p>
+<p class="figure-caption"><a href="https://logirus.ru/articles/week_results/indiyskiy_kryuk-_parallelnyy_import_i_konteynery_-na_stope.html?sphrase_id=11323822">Screenshot from logirus.ru website</a></p>
 
 See below for the full list of registered entities with corresponding email addresses. 
 
@@ -257,7 +262,7 @@ Five of the six identified LLCs are registered at the same address:
 117105, Moscow, Novodanilovskaya Embankment, Building 4A
 
 [![15](/assets/images/cargo/18.png){: .align-center .img-border}](/assets/images/cargo/18.png)
-<p class="figure-caption">Figure X — Correlation Graph #2</p>
+<p class="figure-caption">Correlation Graph #2</p>
 
 In October 2025, a newly registered LLC diverged from this pattern, listing an address in the Esipovo Industrial Park in Solnechnogorsk.
 
@@ -269,7 +274,7 @@ The Telegram logs recovered from the phishing platform showed Armenian operators
 
 * Freight brokers
 * Trucker drivers
-* Logisitics firm
+* logistics firm
 
 The objective discussed was theft of cargo and/or funds. 
 
@@ -277,18 +282,18 @@ The Russian LLCs associated with **Yuri Ivlev** and **Nikita Kazarinov** list OK
 
 * Wholesale trade
 * Transportation of cargo
-* Wareshousing and storage 
+* Warehousing and storage 
 * Auxiliary transportation services
 
 Public websites for these companies advertise:
 
-* Interntional freight handling 
+* International freight handling 
 * Warehousing capacity
-* Cross-border trade coordiation
+* Cross-border trade coordination
 
 The sector alignment is direct. This report does not assert that the corporate revenue is being derived from phishing or diversion activity. 
 
-However, the same email identified used to register phishing infrastructure appears in corporate fillings for logisitics companies operating in the same vertical targeted by **Diesel Vortex**. 
+However, the same email identified used to register phishing infrastructure appears in corporate filings for logistics companies operating in the same vertical targeted by **Diesel Vortex**. 
 
 ## What we can establish
 
