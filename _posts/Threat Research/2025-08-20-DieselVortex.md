@@ -4,7 +4,7 @@ classes: wide
 header:
   teaser: /assets/images/cargo/logo.png
 ribbon: black
-description: "OSINT analysis of entities potentially linked to the 'Global Profit' PHaaS, targeting the Western logistics adn transportation sector."
+description: "OSINT analysis of entities potentially linked to the 'Global Profit' PHaaS platform"
 categories:
   - Threat Research
 tags:
