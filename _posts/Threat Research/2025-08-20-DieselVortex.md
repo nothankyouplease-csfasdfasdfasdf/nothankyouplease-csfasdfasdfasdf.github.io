@@ -4,7 +4,7 @@ classes: wide
 header:
   teaser: /assets/images/cargo/logo.png
 ribbon: black
-description: ""
+description: "OSINT analysis of entities potentially linked to the 'Global Profit' PHaaS, targeting the Western logistics adn transportation sector."
 categories:
   - Threat Research
 tags:
@@ -24,7 +24,7 @@ Linguistic analysis of those logs indicates Armenian-speaking actors targeting c
 During infrastructure analysis, *Ctrl-Alt-Intel* identified a domain registration that linked the phishing panel to a Russian-registered email address. That same email appears linked to corporate records of potentially linked logistics and warehousing LLCs that reported over **14.3 billion rubles** (**$180+ million USD**) in annual revenue within 2024.
 
 [![1](/assets/images/cargo/20.png){: .align-center .img-border}](/assets/images/cargo/20.png)
-<p class="figure-caption">Main Correaltio Graph</p>
+<p class="figure-caption">Main Correlation Graph</p>
 
 > This research is based solely on open-source intelligence (OSINT) and analysis of materials obtained during technical investigation. References to individuals and Russian-registered limited liability companies (LLCs) are provided for research context only, based on publicly available records and observed technical artifacts. Any linkages described are hypotheses derived from correlational indicators and should not be interpreted as findings of guilt, intent, or legal liability.
 
@@ -312,7 +312,7 @@ Each data point is independently verifiable through infrastructure records and p
 
 The investigation into **Diesel Vortex** began with a phishing platform targeting Western logistics companies. Source code recovered by *Have I Been Squatted* exposed not only credential harvesting mechanisms, but operational Telegram logs that revealed Armenian-language coordination tied to freight impersonation, mailbox compromise, and post-access activity consistent with cargo diversion.
 
-The [technical analysis](https://haveibeensquatted.com/blog/diesel-vortex-inside-the-russian-cybercrime-group-targeting-us-eu-freight) published by *Have I Been Squatted* details the inner workings of the **Global Profit** and **MC Profit Always** platform, including Telegram architecture, phishing templates, and victim telemetry, and lots of IOCs. That research establishes the operational capability of **Diesel Vortex**.
+The [technical analysis](linked) published by *Have I Been Squatted* details the inner workings of the **Global Profit** and **MC Profit Always** platform, including Telegram architecture, phishing templates, and victim telemetry, and lots of IOCs. That research establishes the operational capability of **Diesel Vortex**.
 
 A domain embedded within the phishing panel created an infrastructure pivot. The registration record exposed an email identifier. That same identifier appears in the corporate filings of multiple Russian LLCs operating in wholesale trade, warehousing, and transportation. Several of these entities report substantial revenue and share both sector classifications, executive-leadership history and registration addresses.
 
